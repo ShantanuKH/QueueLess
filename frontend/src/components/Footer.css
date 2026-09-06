@@ -1,0 +1,273 @@
+.footer {
+  padding: 70px 28px 25px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-content {
+  max-width: 1040px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+/* COMMON */
+
+.footer-label {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  padding: 5px 10px;
+  border: 1px solid #f8d4d4;
+  border-radius: 20px;
+
+  background: #fff7f7;
+  color: #f24b4b;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ABOUT */
+
+.footer-about {
+  padding-right: 25px;
+}
+
+.footer-about h2,
+.footer-business h2 {
+  margin: 0;
+
+  color: #111827;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-weight: 750;
+}
+
+.footer-about h2 span,
+.footer-business h2 span {
+  color: #f24b4b;
+}
+
+.footer-about > p,
+.footer-business > p {
+  max-width: 500px;
+  margin: 18px 0 28px;
+
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* BENEFITS */
+
+.footer-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 25px;
+}
+
+.footer-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-benefit > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  border-radius: 7px;
+  background: #fff0f0;
+  color: #f24b4b;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-benefit strong {
+  display: block;
+  margin-bottom: 3px;
+
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-benefit small {
+  display: block;
+
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* BUSINESS */
+
+.footer-business {
+  padding-left: 45px;
+  border-left: 1px solid #e5e7eb;
+}
+
+.footer-business-box {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 16px;
+  margin: 22px 0;
+
+  border: 1px solid #f3dcdc;
+  border-radius: 12px;
+
+  background: #fff8f8;
+}
+
+.footer-business-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  background: #ffe7e7;
+  color: #f24b4b;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.footer-business-box strong {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #111827;
+  font-size: 13px;
+}
+
+.footer-business-box small {
+  display: block;
+
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.footer-contact-button {
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 24px;
+
+  background: #f24b4b;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.footer-contact-button:hover {
+  background: #e13f3f;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(242, 75, 75, 0.18);
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+  max-width: 1040px;
+  margin: 55px auto 0;
+  padding-top: 20px;
+
+  border-top: 1px solid #eeeeee;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .footer-about {
+    padding-right: 0;
+  }
+
+  .footer-business {
+    padding-left: 0;
+    padding-top: 40px;
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 55px 20px 22px;
+  }
+
+  .footer-about h2,
+  .footer-business h2 {
+    font-size: 27px;
+  }
+
+  .footer-about > p,
+  .footer-business > p {
+    font-size: 14px;
+  }
+
+  .footer-benefits {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-business {
+    padding-top: 35px;
+  }
+
+  .footer-business-box {
+    margin: 20px 0;
+  }
+
+  .footer-contact-button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+

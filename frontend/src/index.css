@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f24b4b;
+  --color-primary-hover: #e13f3f;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-border: #e5e7eb;
+  --focus-ring: 0 0 0 3px rgba(242, 75, 75, 0.18);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,391 @@
+.queue-status-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #111827;
+}
+
+/* =========================
+   PAGE CONTENT
+   ========================= */
+
+.queue-status-content {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 42px 28px 90px;
+}
+
+/* =========================
+   BACK BUTTON
+   ========================= */
+
+.queue-status-page .back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  margin-bottom: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.queue-status-page .back-button:hover:not(:disabled) {
+  border-color: #d1d5db;
+  color: #111827;
+  background: #fafafa;
+  transform: translateX(-2px);
+}
+
+.queue-status-page .back-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =========================
+   MAIN CARD
+   ========================= */
+
+.queue-status-card {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 42px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e8eaed;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.queue-status-header {
+  text-align: center;
+}
+
+.queue-status-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #f24b4b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.queue-status-header h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  font-weight: 750;
+  color: #111827;
+}
+
+.queue-status-header p {
+  margin: 12px 0 0;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   TOKEN NUMBER
+   ========================= */
+
+.token-number {
+  position: relative;
+  overflow: hidden;
+  margin-top: 34px;
+  padding: 28px 20px;
+  border: 1px solid #f1c2c2;
+  border-radius: 16px;
+  background: rgba(242, 75, 75, 0.04);
+  text-align: center;
+}
+
+.token-number::after {
+  content: '';
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  right: -65px;
+  bottom: -65px;
+  background: rgba(242, 75, 75, 0.06);
+  pointer-events: none;
+}
+
+.token-number span {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.token-number strong {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #f24b4b;
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: -2px;
+}
+
+/* =========================
+   CURRENT STATUS
+   ========================= */
+
+.current-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 22px auto 0;
+  padding: 8px 15px;
+  border-radius: 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-waiting {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-waiting .status-dot {
+  background: #2563eb;
+}
+
+.status-called {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.status-called .status-dot {
+  background: #f97316;
+}
+
+.status-served {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-served .status-dot {
+  background: #16a34a;
+}
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-cancelled .status-dot {
+  background: #dc2626;
+}
+
+/* =========================
+   QUEUE INFORMATION
+   ========================= */
+
+.queue-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.queue-info-item {
+  padding: 20px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.queue-info-item span {
+  display: block;
+  margin-bottom: 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.queue-info-item strong {
+  display: block;
+  color: #111827;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 750;
+}
+
+/* =========================
+   STATUS MESSAGE
+   ========================= */
+
+.queue-status-page .queue-message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 22px;
+  padding: 17px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.queue-status-page .queue-message strong {
+  font-size: 14px;
+}
+
+.queue-status-page .queue-message span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.queue-status-page .waiting-message {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.queue-status-page .called-message {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.queue-status-page .served-message {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.queue-status-page .cancelled-message {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* =========================
+   LEAVE BUTTON
+   ========================= */
+
+.leave-button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px 18px;
+  border: 1px solid #fecaca;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.leave-button:hover:not(:disabled) {
+  border-color: #fca5a5;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.leave-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =========================
+   LOADING / ERROR
+   ========================= */
+
+.status-message {
+  margin-top: 35px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.queue-status-page .queue-error {
+  margin: 30px 0 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+  .queue-status-content {
+    padding: 35px 20px 70px;
+  }
+
+  .queue-status-card {
+    padding: 34px 26px;
+  }
+
+  .queue-status-header h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .queue-status-content {
+    padding: 28px 18px 60px;
+  }
+
+  .queue-status-card {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .queue-status-header h1 {
+    font-size: 30px;
+  }
+
+  .token-number {
+    padding: 25px 18px;
+  }
+
+  .token-number strong {
+    font-size: 52px;
+  }
+
+  .queue-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .queue-info-item {
+    padding: 18px;
+  }
+}

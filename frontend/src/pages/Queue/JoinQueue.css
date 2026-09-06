@@ -1,0 +1,267 @@
+.queue-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #111827;
+}
+
+/* =========================
+   PAGE CONTENT
+   ========================= */
+
+.queue-content {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 42px 28px 90px;
+}
+
+/* =========================
+   BACK BUTTON
+   ========================= */
+
+.queue-page .back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  margin-bottom: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.queue-page .back-button:hover {
+  border-color: #d1d5db;
+  color: #111827;
+  background: #fafafa;
+  transform: translateX(-2px);
+}
+
+/* =========================
+   QUEUE CARD
+   ========================= */
+
+.queue-card {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 42px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e8eaed;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.queue-header {
+  text-align: center;
+}
+
+.queue-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #f24b4b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.queue-header h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  font-weight: 750;
+  color: #111827;
+}
+
+.queue-header p {
+  max-width: 420px;
+  margin: 12px auto 0;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   QUEUE STATS
+   ========================= */
+
+.queue-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.queue-stat {
+  padding: 22px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.queue-stat span {
+  display: block;
+  margin-bottom: 8px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.queue-stat strong {
+  display: block;
+  color: #111827;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 750;
+}
+
+/* =========================
+   INFORMATION BOX
+   ========================= */
+
+.queue-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #f1c2c2;
+  border-radius: 12px;
+  background: rgba(242, 75, 75, 0.04);
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f24b4b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.queue-info-box p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================
+   JOIN BUTTON
+   ========================= */
+
+.join-queue-button {
+  width: 100%;
+  margin-top: 26px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 26px;
+  background: #f24b4b;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.join-queue-button:hover:not(:disabled) {
+  background: #e13f3f;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(242, 75, 75, 0.2);
+}
+
+.join-queue-button:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* =========================
+   MESSAGES
+   ========================= */
+
+.queue-page .queue-message {
+  margin: 34px 0 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.queue-page .queue-error {
+  margin: 25px 0;
+  text-align: center;
+  color: #b91c1c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+  .queue-content {
+    padding: 35px 20px 70px;
+  }
+
+  .queue-card {
+    padding: 34px 26px;
+  }
+
+  .queue-header h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .queue-content {
+    padding: 28px 18px 60px;
+  }
+
+  .queue-card {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .queue-header h1 {
+    font-size: 30px;
+  }
+
+  .queue-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .queue-stat {
+    padding: 18px;
+  }
+
+  .queue-stat strong {
+    font-size: 26px;
+  }
+}
