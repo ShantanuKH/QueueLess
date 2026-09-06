@@ -39,7 +39,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(
                 List.of(
                         "http://localhost:5173",
-                        "https://queueless-1-ytne.onrender.com"
+                        "https://queueless-tnhv.onrender.com"
                 )
         );
 
