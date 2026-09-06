@@ -125,8 +125,8 @@ function StaffDashboard() {
     }
 
     loadTokens()
-  }, [selectedQueue])
-
+ }, [selectedQueue?.id])
+ 
   /*
    * Keep queue and token information synchronized
    * with changes made from other tabs, such as the

@@ -20,6 +20,7 @@ function Home() {
   const [aiLoading, setAiLoading] = useState(false)
   const [aiError, setAiError] = useState('')
 
+  // Initial service center load
   useEffect(() => {
     async function loadServiceCenters() {
       try {
@@ -33,6 +34,26 @@ function Home() {
     }
 
     loadServiceCenters()
+  }, [])
+
+  /*
+   * Keep service center status synchronized with changes
+   * made from the Admin dashboard.
+   *
+   * This runs every 5 seconds without showing the
+   * "Loading service centers..." message again.
+   */
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      try {
+        const updatedCenters = await getServiceCenters()
+        setServiceCenters(updatedCenters)
+      } catch {
+        // Ignore background refresh failures
+      }
+    }, 5000)
+
+    return () => clearInterval(interval)
   }, [])
 
   const filteredCenters = serviceCenters.filter((center) =>
@@ -117,7 +138,7 @@ function Home() {
    * "I'd recommend joining the Passport Renewal queue at the
    * City Passport & Visa Center (Kothrud Main Road, Pune).
    * Its queue is ACTIVE with no people waiting, so the estimated
-   * wait is currently 0 minutes..."F
+   * wait is currently 0 minutes..."
    */
   function getRecommendationDetails(message) {
     const cleanMessage = cleanAiMessage(message)
@@ -156,9 +177,10 @@ function Home() {
       estimatedWait = Number(waitMatch[1])
     }
 
-    const active = /queue is ACTIVE|currently active|is active/i.test(
-      cleanMessage
-    )
+    const active =
+      /queue is ACTIVE|currently active|is active/i.test(
+        cleanMessage
+      )
 
     return {
       message: cleanMessage,
@@ -524,13 +546,18 @@ function Home() {
 
                     <button
                       className="view-button"
-                      onClick={() =>
-                        navigate(
-                          `/service-centers/${center.id}`
-                        )
-                      }
+                      onClick={() => {
+                        if (center.status !== 'ACTIVE') {
+                          return
+                        }
+
+                        navigate(`/service-centers/${center.id}`)
+                      }}
+                      disabled={center.status !== 'ACTIVE'}
                     >
-                      View Services
+                      {center.status === 'ACTIVE'
+                        ? 'View Services'
+                        : 'Unavailable'}
                     </button>
                   </div>
                 ))}

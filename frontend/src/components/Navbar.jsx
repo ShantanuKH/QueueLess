@@ -14,6 +14,14 @@ function Navbar() {
     navigate('/')
   }
 
+  function handleDashboard() {
+    if (user?.role === 'ADMIN') {
+      navigate('/admin')
+    } else if (user?.role === 'STAFF') {
+      navigate('/staff')
+    }
+  }
+
   return (
     <header className="navbar">
       <button
@@ -31,16 +39,26 @@ function Navbar() {
 
       {user ? (
         <div className="nav-user">
-           <span>
+          <span>
             Hi, {user.firstName}
           </span>
 
-            {user.role === 'CUSTOMER' && (
+          {user.role === 'CUSTOMER' && (
             <button
               className="login-button"
               onClick={() => navigate('/my-queues')}
             >
               My Queues
+            </button>
+          )}
+
+          {(user.role === 'ADMIN' ||
+            user.role === 'STAFF') && (
+            <button
+              className="login-button"
+              onClick={handleDashboard}
+            >
+              Dashboard
             </button>
           )}
 
